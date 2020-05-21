@@ -1,0 +1,123 @@
+// deleted from package.json
+
+    "webpack": "^4.42.1", (put back)
+    "webpack-cli": "^3.3.11" (put back)
+    "react-scripts": "^3.4.1",
+
+// Errors
+
+1. After loading compiled files, I got the browser console message: "Failed to parse source map"
+
+2. Refused to load the image 'http://localhost:9080/favicon.ico' because it violates the following Content Security Policy directive: "default-src 'none'". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+
+
+npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react webpack
+
+npm install
+
+
+
+4. old package.json{
+  "name": "quarantine-party",
+  "version": "1.0.0",
+  "description": "This is an app to have fun with your friends while quarantined",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "build-react-scripts": "react-scripts build",
+    "build": "webpack -d --watch",
+    "eject": "react-scripts eject",
+    "postinstall": "npm run build-react-scripts",
+    "heroku-postbuild": "npm install && npm run build-react-scripts",
+    "test": "test"
+  },
+  "author": "Mason Borchard",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7",
+    "proxy": "^1.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.9.0",
+    "request": "^2.88.2",
+    "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:3000"
+}
+
+
+
+4. old render App:
+render() {
+      return (
+  <div>
+          <div className="nav">
+            <span className="logo"
+              onClick={(e) => this.changeView('home')}>
+              QuackHouse
+            </span>
+
+            <span className={'home'
+            ? 'selection'
+              : 'unselected'}
+            onClick={(e) => this.changeView('home')}>
+              Choose an Activity
+            </span>
+
+            <span className={this.state.view === 'things'
+            ? 'selection'
+              : 'unselected'}
+            onClick={(e) => this.changeView('things')}>
+              Play Things
+            </span>
+
+            <span className={this.state.view === 'trivia'
+            ? 'selection'
+              : 'unselected'}
+            onClick={(e) => this.changeView('trivia')}>
+              Play Trivia
+            </span>
+
+            <span className={this.state.view === 'tfb'
+            ? 'selection'
+              : 'unselected'}
+            onClick={(e) => this.changeView('tfb')}>
+              Front Bottoms Lyrics Generator
+            </span>
+
+          </div>
+
+          <div className="main">
+            {this.renderView()}
+          </div>
+        </div>
+      );
+    }
