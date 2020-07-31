@@ -76,7 +76,7 @@ class App extends Component {
           <div className="nav">
             <span className="logo"
               onClick={(e) => this.changeView('home')}>
-              QuackHouse
+              The QuackHouse
             </span>
 
             <span className={this.state.view === 'home'
