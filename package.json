@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cranjis-mcbasketball/quarantine-party-games.git"
+    "url": "git+https://github.com/mason-u-borchard/quarantine-party-games.git"
   },
   "scripts": {
     "start": "nodemon server/index.js",
