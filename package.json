@@ -47,7 +47,7 @@
     "request": "^2.88.2",
     "shuffle-array": "^1.0.1",
     "style-loader": "^1.2.0",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
